@@ -38,4 +38,19 @@ msgstr "<H3>Bienvenue</H3>Vous trouverez des informations sur ceci et cela ..."
 msgid "description1"
 msgstr "Une petite description de l'image"
 
+msgid "description2"
+msgstr "Une seconde petite description"
+
+msgid "fill_contact_form"
+msgstr "Formulaire de contact"
+
+msgid "email"
+msgstr "Email"
+
+msgid "name"
+msgstr "Nom"
+
+msgid "send"
+msgstr "Envoyer"
+
 

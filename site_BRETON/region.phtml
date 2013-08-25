@@ -3,8 +3,6 @@
 <html>
 <head>
 
-	
-
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Your Website</title>
 
@@ -14,33 +12,35 @@
 	?>
 
 	<div class="container" >
+	<div class="span12">
 	<table class="table" >
 		<tr>
-			
-		
-			<td class="text-center vert-center" >
-				<div class="span6" >
+			<td colspan="6" >
+				<div class="span6 cadre">
 				<img src="./images/other/DSC06503.JPG"  />
-			</div>
-				
-				<div class="span5 text-center vert-center" >
+				</div>
+			</td>
+			<td colspan="5" class="text-center vert-center">
+			<div class="text-center">
 				<?= $translator->gettext('description1'); ?>
 				</div>
+				
 			</td>
 		</tr>
 	<tr>
-		<td class="" >
-		<div class="span5 text-center vert-center" >
+		<td colspan="5" class="vert-center">
+			<div class="text-center">
 				<?= $translator->gettext('description2'); ?>
 				</div>
-		
-		<div class="span6">
-		
+		</td>
+			<td colspan="6">
+				<div class="span6 cadre">
 				<img src="./images/other/DSC06476.JPG"  />
-			</div>
+				</div>
 		</td>
 	</tr>
 </table>
+</div>
 </body>
 
 </html>

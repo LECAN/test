@@ -37,8 +37,23 @@ msgid "welcome_message"
 msgstr "<H3>Welcome</H3>"
 	"you will find information on this and that ..."
 
-#: PHP.php:70
-msgid "File is too small"
-msgid_plural "Files are too small"
-msgstr[0] "Datei ist zu klein"
-msgstr[1] "Dateien sind zu klein"
+msgid "description1"
+msgstr "The first description to describe the image"
+
+
+msgid "description2"
+msgstr "A second description"
+
+msgid "fill_contact_form"
+msgstr "Contact form"
+
+msgid "email"
+msgstr "Email"
+
+msgid "name"
+msgstr "Name"
+
+msgid "send"
+msgstr "Send"
+
+

@@ -66,3 +66,10 @@ font-size: 1.5em !important;
 .carousel-control{
 	top: 50% !important;
 }
+
+.cadre{
+	background:#F5F5F5;
+	padding:10px;
+	border-radius:5px 5px;
+
+}
