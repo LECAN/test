@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+
+	
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Your Website</title>
+
+	<?php
+		include('./header.phtml');
+	
+	?>
+<div class="container">
+
+
+	<div class="container">
+    <div class="row">
+        <div class="span12">
+            <form class="form-horizontal" method="post" action="/form/">
+                <fieldset>
+                    <legend><?= $translator->gettext('fill_contact_form') ?></legend>
+					<div class="span3">
+						<b>NOM</b>  Prénom <br/>
+						adresse <br/>
+						adresse2 <br/>
+						CP  VILLE <br/>
+						
+					
+					</div>
+					<div class="span6">
+						<div class="control-group">
+							<label class="control-label" for="inputEmail"><?= $translator->gettext('email') ?></label>
+								<div class="controls">
+									<input type="text" id="inputEmail" placeholder="<?= $translator->gettext('email') ?>">
+								</div>
+							</div>
+						<div class="control-group">
+							<label class="control-label" for="inputName"><?= $translator->gettext('name') ?></label>
+							<div class="controls">
+								<input type="password" id="inputName" placeholder="<?= $translator->gettext('name') ?>">
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="controls">
+								<textarea></textarea>
+								
+							</div>
+							
+						</div>
+						 <div class="control-group">
+							<div class="controls">
+							<button type="submit" class="btn"><?= $translator->gettext('send'); ?></button>
+							</div>
+							
+						</div>
+					</div>
+                </fieldset>
+            </form>
+      </div>
+    </div>
+</div>
+	
+	</div>
+
+
+
+</body>
+
+</html>

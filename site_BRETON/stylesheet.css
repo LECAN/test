@@ -1,0 +1,68 @@
+.nav-pills,
+ .nav-pills > li {
+  float:none;
+  display:inline-block;
+  *display:inline; /* ie7 fix */
+  *zoom:1; /* hasLayout ie7 trigger */
+  vertical-align: top;
+}
+
+.menu{
+  text-align:center !important;
+}
+
+.flag {
+	width: 16px;
+	height: 11px;
+	
+}
+
+.img_size{
+	width: 600px;
+	height: 450px;
+}
+
+
+.clickable{
+cursor:pointer;
+cursor:hand;
+
+}
+
+.vert-center{
+    vertical-align: middle !important;
+}
+
+.slider{
+	height:300px;
+	width:500px;
+
+}
+
+.test{
+ height:500px;
+}
+
+.line{
+	display:inline-block;
+	position:relative;
+}
+
+.Gmap{
+	height:400px;
+	width:600px;
+}
+
+/* fix google map display */
+#map-canvas img {
+    max-width: none;
+}
+
+.menu a{
+line-height: 1.5em !important;
+font-size: 1.5em !important;
+}
+
+.carousel-control{
+	top: 50% !important;
+}

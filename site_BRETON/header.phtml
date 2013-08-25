@@ -1,0 +1,84 @@
+
+
+
+<!-- include JQuery -->
+ <script src="./JQuery/jquery-1.10.2.min.js"></script>
+  
+ <!-- include bootstrap -->
+  <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <link href="./stylesheet.css" rel="stylesheet">
+  <script src="./bootstrap/js/bootstrap.min.js"></script>
+  
+  <?php 
+
+  session_start();
+  //GETTEXT
+  include_once "./gettext/Gettext.php";
+  
+  //TODO : get default locale
+  
+  if(isset($_POST['locale'])){
+	$_SESSION["locale"] = $_POST['locale'];
+  }
+  
+  if(!isset($_SESSION["locale"])){
+	$_SESSION["locale"]='en';
+  }
+  
+  
+  $translator = new Gettext_PHP('./gettext/locale','messages',$_SESSION["locale"]);
+		
+	?>
+  <script>
+	function formSubmit()
+	{
+		document.getElementById("frm1").submit();
+	}
+  </script>
+  
+  
+  </head>
+  
+  <body>
+  <div class="row">
+		
+			<div class="container menu" >
+
+
+<ul class="nav nav-pills">
+<li <?php if(basename($_SERVER['REQUEST_URI'],'.phtml')==='home') echo ' class="active" '; ?> >
+ <a href="./home.phtml" ><?= $translator->gettext('home'); ?></a>
+</li>
+<li <?php if(basename($_SERVER['REQUEST_URI'],'.phtml')==='where_are_we') echo ' class="active" '; ?> >
+<a href="./where_are_we.phtml" ><?= $translator->gettext('where_are_we'); ?></a>
+</li>
+<li <?php if(basename($_SERVER['REQUEST_URI'],'.phtml')==='region') echo ' class="active" '; ?> >
+<a href="./region.phtml" ><?= $translator->gettext('region'); ?></a>
+</li>
+<li <?php if(basename($_SERVER['REQUEST_URI'],'.phtml')==='prices') echo ' class="active" '; ?> >
+<a href="./prices.phtml" ><?= $translator->gettext('prices'); ?></a>
+</li>
+<li <?php if(basename($_SERVER['REQUEST_URI'],'.phtml')==='contact') echo ' class="active" '; ?> >
+<a href="./contact.phtml" ><?= $translator->gettext('contact'); ?></a>
+</li>
+
+
+</ul>
+
+<div class="pull-right" >
+<form id="fr" class="line" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+<input type="hidden" name="locale" value="fr" />
+<input type="image" name="fr" src="./images/flags/fr.png"  />
+</form>
+<form id="gb" class="line" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+<input type="hidden" name="locale" value="en" />
+<input type="image" name="gb"  src="./images/flags/gb.png" />
+</form>
+<form id="de" class="line" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+<input type="hidden" name="locale" value="de" />
+<input type ="image" name="de" src="./images/flags/de.png" />
+</form>
+</div>
+
+		</div>
+	</div>

@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+
+<html>
+<head>
+
+	
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Your Website</title>
+
+	<?php
+		include('./header.phtml');
+	
+	?>
+	
+	
+<!-- Slider  -->
+
+<div class="container" >	
+<?php
+
+//init slider images
+		$images = scandir ("./images/slider/");
+		
+		//pop . and ..
+		$images=array_reverse($images);
+		array_pop($images);
+		array_pop($images);
+
+?>
+    <div id="myCarousel" class="carousel slide span7">
+		<ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active clickable" ></li>
+		<?php 
+			for($i=0;$i<count($images)-1;$i++){
+			?>
+			
+			<li data-target="#myCarousel" data-slide-to="<?=   ($i+1) ?>" class="clickable" ></li>
+			<?php } ?>
+		</ol>
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+	<?php
+		
+		
+		$first=array_pop($images);
+		?>
+		<div class="active item"><img  src="./images/slider/<?= $first ?>" /></div>
+		<?php
+		
+		$maxSize=array('height' => 0 , 'width' => 1);
+		
+		foreach($images as $image):
+			//looking for the largest image ( speaking about height)
+			list($width, $height) = getimagesize('./images/slider/'.$image);
+			$ratio = $height/$width;
+			
+			$current = array( 'width' => $width,  'height' =>$height);
+			
+			$maxSize = $ratio>($maxSize['height']/$maxSize['width']) ? $current : $maxSize;
+			
+	?>
+		<div class="item"><img src="./images/slider/<?= $image ?>" /></div>
+		<?php endforeach;?>
+    </div>
+    <!-- Carousel nav -->
+		<a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+		<a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+	
+	<script>
+		var height = $('#myCarousel').width()*<?= $maxSize['height'] ?>/ <?= $maxSize['width'] ?>;
+		$('#myCarousel').height(height);
+		$('.carousel-inner').height(height);
+		
+		
+	</script>
+	
+	<!-- description -->
+	<div class="span4" >
+	<?=  $translator->gettext('welcome_message');?>
+	</div>
+</div>
+</body>
+
+</html>
